@@ -1,0 +1,36 @@
+name: 'Submit Contribution to APICURON'
+description: 'This Action will help submit contribution events to APICURON'
+author: 'Adel Bouhraoua @ BioComputingUP Lab'
+
+# Add your action's branding here. This will appear on the GitHub Marketplace.
+branding:
+  icon: 'heart'
+  color: 'red'
+
+# Define your inputs here.
+inputs:
+  resource_id:
+    description: 'The Resource ID defined in APICURON'
+    required: true
+  activity_term:
+    description: 'The Activity identifier as defined in APICURON'
+    required: true
+  entity_uri:
+    description:
+      'A link to the contribution that occured (pull request or commit)'
+    required: true
+  token:
+    description: "The maintainer's API key on APICURON"
+    required: true
+  contributor_orcid:
+    description: "The contributor's ORCID ID"
+    required: true
+
+# Define your outputs here.
+outputs:
+  time:
+    description: 'Execution time'
+
+runs:
+  using: node20
+  main: dist/index.js
